@@ -28,6 +28,7 @@
 #include <protocols/cyclic_peptide/crosslinker/SquarePlanarMetal_Helper.hh>
 #include <protocols/cyclic_peptide/crosslinker/SquarePyramidalMetal_Helper.hh>
 #include <protocols/cyclic_peptide/crosslinker/Lanthionine_Helper.hh>
+#include <protocols/cyclic_peptide/crosslinker/Universal_Helper.hh>
 
 // Core headers
 #include <core/pose/Pose.hh>
@@ -134,6 +135,8 @@ CrosslinkerMover::get_crosslinker_name(
 		return "square_planar_metal";
 	case CrossLinker::square_pyramidal_metal :
 		return "square_pyramidal_metal";
+	case CrossLinker::universal :
+		return "universal";
 	default :
 		break;
 	}
@@ -513,6 +516,8 @@ CrosslinkerMover::crosslinkermover_helper_from_type() const {
 		return utility::pointer::make_shared< protocols::cyclic_peptide::crosslinker::SquarePlanarMetal_Helper >(metal_type() );
 	case CrossLinker::square_pyramidal_metal :
 		return utility::pointer::make_shared< protocols::cyclic_peptide::crosslinker::SquarePyramidalMetal_Helper >(metal_type() );
+	case CrossLinker::universal :
+		return utility::pointer::make_shared< protocols::cyclic_peptide::crosslinker::Universal_Helper >();
 	default :
 		utility_exit_with_message( "Error in protocols::cyclic_peptide::CrosslinkerMover::apply(): Invalid crosslinker specified." );
 	}

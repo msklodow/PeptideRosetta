@@ -44,6 +44,7 @@ sources = {
 		"TrigonalPlanarMetal_Helper",
 		"TrigonalPyramidalMetal_Helper",
 		"TMA_Helper",
+		"Universal_Helper"
 	],
 	"protocols/denovo_design" : [
 		"util",

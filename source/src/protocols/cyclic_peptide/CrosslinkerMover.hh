@@ -52,7 +52,7 @@ enum class CrossLinker {
 	trigonal_pyramidal_metal,
 	square_planar_metal,
 	square_pyramidal_metal,
-
+	universal,
 	unknown_crosslinker, //Keep this second-to-last.
 	end_of_crosslinker_list = unknown_crosslinker //Keep this last.
 };
